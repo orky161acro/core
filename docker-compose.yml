@@ -31,8 +31,8 @@ services:
       timeout: 3s
       retries: 5
     volumes:
-      - mysql-db:/var/lib/mysql
-      - mysql-db:/var/mysql-dumps
+      - mysql-acro:/var/lib/mysql
+      - mysql-acro:/var/mysql-dumps
     networks:
       - acro-net
 
@@ -60,7 +60,7 @@ services:
       - acro-net
 
 volumes:
-  mysql-db:
+  mysql-acro:
 
 networks:
   acro-net:
