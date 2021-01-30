@@ -54,19 +54,13 @@ services:
   front:
     image: orky161/acro-front:3
     restart: always
-    environment:
-      - SERVER_URL
     ports:
-      - '9000:9000'
+      - '9000:80'
     networks:
       - acro-net
 
-
-
-
 volumes:
   mysql-db:
-
 
 networks:
   acro-net:
