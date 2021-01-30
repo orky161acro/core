@@ -36,7 +36,33 @@ services:
     networks:
       - acro-net
 
- 
+
+  back:
+    image: orky161/acro-back:3
+    restart: always
+    environment:
+      - MYSQL_HOST
+      - MYSQL_PORT
+      - MYSQL_USER
+      - MYSQL_PASSWORD
+      - MYSQL_DATABASE
+    ports:
+      - '9001:9001'
+    networks:
+      - acro-net
+
+  front:
+    image: orky161/acro-front:3
+    restart: always
+    environment:
+      - SERVER_URL
+    ports:
+      - '9000:9000'
+    networks:
+      - acro-net
+
+
+
 
 volumes:
   mysql-db:
